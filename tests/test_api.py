@@ -1,3 +1,9 @@
+import requests
+
+class TestAPI:
+    def test_example(self):
+        response = requests.get('http://localhost:5000/example')
+        assert response.status_code == 200
 def test_list_users(api_client):
     response = api_client.get('/users?page=2')
     assert response.status_code == 200
