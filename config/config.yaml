@@ -1,3 +1,6 @@
-base_url: "https://api.example.com"
-endpoints:
-  sample_endpoint: "/v1/sample"
+
+
+base_url: https://reqres.in/api
+headers:
+  Content-Type: application/json
+
