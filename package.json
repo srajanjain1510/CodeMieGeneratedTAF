@@ -1,0 +1,12 @@
+{
+  "name": "performance-testing",
+  "version": "1.0.0",
+  "description": "Performance testing setup for React frontend application",
+  "main": "index.js",
+  "scripts": {
+    "test:performance": "node performance_test.js"
+  },
+  "dependencies": {
+    "lighthouse": "^8.0.0"
+  }
+}
