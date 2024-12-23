@@ -11,26 +11,23 @@ class Customer:
     phone: Optional[str] = None
 
 @dataclass
-class Order:
-    orderId: Optional[int]
-    customerId: int
-    orderDate: str
-    status: str
+class OrderDetail:
     product_id: int
     quantity: int
+    price: float
+
+@dataclass
+class Order:
+    customer_id: int
+    order_details: List[OrderDetail]
+    orderDate: str
+    status: str
 
 @dataclass
 class Payment:
+    order_id: int
     amount: float
     method: str
-
-# Order Service Models
-@dataclass
-class OrderDetail:
-    orderId: int
-    productId: int
-    quantity: int
-    price: float
 
 # Product Service Models
 @dataclass
@@ -60,8 +57,8 @@ class Employee:
     officeCode: str
     reportsTo: Optional[int]
     jobTitle: str
-    first_name: str
-    last_name: str
+    name: str
+    position: str
 
 @dataclass
 class Office:
