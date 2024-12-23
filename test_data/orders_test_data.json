@@ -8,5 +8,29 @@
         "price": 9.99
       }
     ]
-  }
+  },
+  "orders": [
+    {
+      "order_id": 1,
+      "customer_id": 2,
+      "order_details": [
+        {
+          "product_id": 2,
+          "quantity": 1,
+          "price": 19.99
+        }
+      ]
+    },
+    {
+      "order_id": 2,
+      "customer_id": 3,
+      "order_details": [
+        {
+          "product_id": 3,
+          "quantity": 3,
+          "price": 5.99
+        }
+      ]
+    }
+  ]
 }

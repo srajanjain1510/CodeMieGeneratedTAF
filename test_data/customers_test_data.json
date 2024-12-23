@@ -8,5 +8,22 @@
     "name": "Jane Doe",
     "address": "456 Oak Street",
     "email": "jane.doe@example.com"
-  }
+  },
+  "test_customers": [
+    {
+      "name": "Alice Smith",
+      "address": "789 Maple Avenue",
+      "email": "alice.smith@example.com"
+    },
+    {
+      "name": "Bob Johnson",
+      "address": "101 Pine Road",
+      "email": "bob.johnson@example.com"
+    },
+    {
+      "name": "Charlie Brown",
+      "address": "202 Cedar Lane",
+      "email": "charlie.brown@example.com"
+    }
+  ]
 }
