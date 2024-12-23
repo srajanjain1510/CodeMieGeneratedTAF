@@ -1,32 +1,43 @@
+import json
 import pytest
-from dataclasses import asdict
 from models import Customer
-
-from utils.api_client import APIClient
-
 
 @pytest.fixture
 def client():
-    base_url = 'http://localhost:8000'
-    return APIClient(base_url)
+    # Assuming you have a test client setup
+    from myapp import create_app
+    app = create_app()
+    return app.test_client()
 
-def test_create_customer(client):
-    customer = Customer(name='John Doe', address='123 Elm Street', email='john.doe@example.com')
-    response = client.post('http://localhost:8000/customers', json=asdict(customer))
+@pytest.fixture
+def customer_test_data():
+    with open('test_data/customers_test_data.json') as f:
+        return json.load(f)
+
+def test_create_customer(client, customer_test_data):
+    customer_data = customer_test_data['create_customer']
+    customer = Customer(**customer_data)
+    response = client.post('/customers', json=customer.__dict__)
     assert response.status_code == 201
-    assert response.json()['name'] == 'John Doe'
+    assert response.json()['name'] == customer_data['name']
 
-def test_get_customer(client):
-    response = client.get('http://localhost:8000/customers/1')
+def test_update_customer(client, customer_test_data):
+    customer_data = customer_test_data['update_customer']
+    customer = Customer(**customer_data)
+    response = client.put('/customers/1', json=customer.__dict__)
     assert response.status_code == 200
-    assert response.json()['id'] == 1
-
-def test_update_customer(client):
-    customer = Customer(name='Jane Doe', address='456 Oak Street', email='jane.doe@example.com')
-    response = client.put('http://localhost:8000/customers/1', json=asdict(customer))
-    assert response.status_code == 200
-    assert response.json()['name'] == 'Jane Doe'
+    assert response.json()['name'] == customer_data['name']
 
 def test_delete_customer(client):
-    response = client.delete('http://localhost:8000/customers/1')
+    response = client.delete('/customers/1')
     assert response.status_code == 204
+
+def test_list_customers(client):
+    response = client.get('/customers')
+    assert response.status_code == 200
+    assert isinstance(response.json(), list)
+
+def test_get_customer(client):
+    response = client.get('/customers/1')
+    assert response.status_code == 200
+    assert response.json()['id'] == 1
