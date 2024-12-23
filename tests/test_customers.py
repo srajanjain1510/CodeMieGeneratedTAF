@@ -2,11 +2,12 @@ import json
 import pytest
 from models import Customer
 
-
 @pytest.fixture
-def client(api_client):
+def client():
     # Assuming you have a test client setup
-    return api_client
+    from myapp import create_app
+    app = create_app()
+    return app.test_client()
 
 @pytest.fixture
 def customer_test_data():
