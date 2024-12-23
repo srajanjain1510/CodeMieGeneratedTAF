@@ -37,8 +37,8 @@ class OrderDetail:
 class Product:
     productCode: str
     name: str
-    description: Optional[str] = None
     price: float
+    description: Optional[str] = None
 
 @dataclass
 class ProductLine:

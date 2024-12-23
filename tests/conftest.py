@@ -2,7 +2,8 @@ import logging
 import pytest
 import yaml
 
-from CodeMieGeneratedTAF.utils.api_client import APIClient
+from utils.api_client import APIClient
+
 
 def pytest_configure(config):
     # Configure logging
