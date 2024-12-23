@@ -1,0 +1,7 @@
+{
+  "orders_with_payments": 0.8,
+  "orders_without_payments": 0.1,
+  "orders_with_multiple_payments": 0.1,
+  "employees_with_manager": 0.9,
+  "employees_without_manager": 0.1
+}
