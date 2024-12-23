@@ -21,9 +21,9 @@ def config():
     with open('config/config.yaml', 'r') as config_file:
         return yaml.safe_load(config_file)
 
-@pytest.fixture(scope='session')
+@pytest.fixture(scope='module')
 def base_url():
-    return "http://api.example.com"  # Replace with the actual base URL of the API
+    return 'http://localhost:8000'  # Example base URL, replace with actual base URL
 
 @pytest.fixture(scope='session')
 def api_client(config, base_url):
