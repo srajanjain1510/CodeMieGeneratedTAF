@@ -1,12 +1,12 @@
 {
   "create_product": {
-    "name": "Widget",
-    "description": "A useful widget",
-    "price": 19.99
+    "name": "Product Alpha",
+    "description": "A high-quality product",
+    "price": 99.99
   },
   "update_product": {
-    "name": "Gadget",
-    "description": "An improved gadget",
-    "price": 29.99
+    "name": "Product Beta",
+    "description": "An updated high-quality product",
+    "price": 109.99
   }
 }
