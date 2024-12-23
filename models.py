@@ -1,12 +1,14 @@
 from dataclasses import dataclass
 from typing import List, Optional
 
+# Customer Service Models
 @dataclass
 class Customer:
     customerId: Optional[int]
     name: str
     email: str
     address: str
+    phone: Optional[str] = None
 
 @dataclass
 class Order:
@@ -14,7 +16,15 @@ class Order:
     customerId: int
     orderDate: str
     status: str
+    product_id: int
+    quantity: int
 
+@dataclass
+class Payment:
+    amount: float
+    method: str
+
+# Order Service Models
 @dataclass
 class OrderDetail:
     orderId: int
@@ -22,11 +32,12 @@ class OrderDetail:
     quantity: int
     price: float
 
+# Product Service Models
 @dataclass
 class Product:
     productCode: str
     name: str
-    description: str
+    description: Optional[str] = None
     price: float
 
 @dataclass
@@ -35,7 +46,10 @@ class ProductLine:
     textDescription: str
     htmlDescription: Optional[str]
     image: Optional[str]
+    name: str
+    description: Optional[str] = None
 
+# Employee Service Models
 @dataclass
 class Employee:
     employeeNumber: int
@@ -46,6 +60,8 @@ class Employee:
     officeCode: str
     reportsTo: Optional[int]
     jobTitle: str
+    first_name: str
+    last_name: str
 
 @dataclass
 class Office:
@@ -58,3 +74,5 @@ class Office:
     country: str
     postalCode: str
     territory: str
+    code: str
+    address: str
