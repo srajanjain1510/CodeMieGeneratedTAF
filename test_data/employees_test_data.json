@@ -1,0 +1,12 @@
+{
+  "create_employee": {
+    "name": "Alice",
+    "position": "Engineer",
+    "office_code": "NYC"
+  },
+  "update_employee": {
+    "name": "Bob",
+    "position": "Senior Engineer",
+    "office_code": "LA"
+  }
+}

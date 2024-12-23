@@ -1,0 +1,12 @@
+{
+  "create_order": {
+    "customer_id": 1,
+    "order_details": [
+      {
+        "product_id": 1,
+        "quantity": 2,
+        "price": 9.99
+      }
+    ]
+  }
+}
