@@ -5,9 +5,9 @@ from utils.api_client import APIClient
 
 
 @pytest.fixture
-def client():
-    base_url = 'http://localhost:8000'
-    return APIClient(base_url)
+def client(api_client):
+    # Assuming you have a test client setup
+    return api_client
 
 
 @pytest.fixture

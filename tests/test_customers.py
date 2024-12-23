@@ -3,11 +3,9 @@ import pytest
 from models import Customer
 
 @pytest.fixture
-def client():
+def client(api_client):
     # Assuming you have a test client setup
-    from myapp import create_app
-    app = create_app()
-    return app.test_client()
+    return api_client
 
 @pytest.fixture
 def customer_test_data():
