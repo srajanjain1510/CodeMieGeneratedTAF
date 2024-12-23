@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List, Optional
 
 @dataclass
@@ -14,6 +14,8 @@ class Order:
     customerId: int
     orderDate: str
     status: str
+    product_id: int
+    quantity: int
 
 @dataclass
 class OrderDetail:
@@ -21,6 +23,11 @@ class OrderDetail:
     productId: int
     quantity: int
     price: float
+
+@dataclass
+class Payment:
+    amount: float
+    method: str
 
 @dataclass
 class Product:
@@ -32,6 +39,7 @@ class Product:
 @dataclass
 class ProductLine:
     productLine: str
+    name: str
     textDescription: str
     htmlDescription: Optional[str]
     image: Optional[str]
@@ -46,10 +54,15 @@ class Employee:
     officeCode: str
     reportsTo: Optional[int]
     jobTitle: str
+    name: str
+    position: str
+    office_code: str
+    reports_to: Optional[int] = None
 
 @dataclass
 class Office:
     officeCode: str
+    code: str
     city: str
     phone: str
     addressLine1: str
@@ -58,3 +71,4 @@ class Office:
     country: str
     postalCode: str
     territory: str
+    address: str
