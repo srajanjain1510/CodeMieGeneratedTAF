@@ -8,5 +8,17 @@
     "name": "Jane Doe",
     "address": "456 Oak Street",
     "email": "jane.doe@example.com"
+  },
+  "example_test_data": {
+    "create_customer": {
+      "name": "John Doe",
+      "address": "123 Elm Street",
+      "email": "john.doe@example.com"
+    },
+    "update_customer": {
+      "name": "Jane Doe",
+      "address": "456 Oak Street",
+      "email": "jane.doe@example.com"
+    }
   }
 }
