@@ -4,7 +4,6 @@ import yaml
 
 from CodeMieGeneratedTAF.utils.api_client import APIClient
 
-
 def pytest_configure(config):
     # Configure logging
     logging.basicConfig(level=logging.INFO,
@@ -23,5 +22,9 @@ def config():
         return yaml.safe_load(config_file)
 
 @pytest.fixture(scope='session')
-def api_client(config):
-    return APIClient(base_url=config['base_url'], headers=config['headers'])
+def base_url():
+    return "http://api.example.com"  # Replace with the actual base URL of the API
+
+@pytest.fixture(scope='session')
+def api_client(config, base_url):
+    return APIClient(base_url=base_url, headers=config['headers'])
