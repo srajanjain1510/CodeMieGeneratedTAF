@@ -1,11 +1,14 @@
 import pytest
 from dataclasses import asdict
-from models.customer import Customer
+from models import Customer
+
+from utils.api_client import APIClient
+
 
 @pytest.fixture
 def client():
-    from requests import Session
-    return Session()
+    base_url = 'http://localhost:8000'
+    return APIClient(base_url)
 
 def test_create_customer(client):
     customer = Customer(name='John Doe', address='123 Elm Street', email='john.doe@example.com')

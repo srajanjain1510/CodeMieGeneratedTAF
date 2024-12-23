@@ -1,12 +1,13 @@
 import pytest
 from models import Order, OrderDetail
+from utils.api_client import APIClient
+
 
 @pytest.fixture
 def client():
     # Assuming you have a test client setup
-    from myapp import create_app
-    app = create_app()
-    return app.test_client()
+    base_url = 'http://localhost:8000'
+    return APIClient(base_url)
 
 
 def test_create_order(client):
