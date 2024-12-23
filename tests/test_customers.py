@@ -1,4 +1,5 @@
 import pytest
+from dataclasses import asdict
 from models.customer import Customer
 
 @pytest.fixture
@@ -8,7 +9,7 @@ def client():
 
 def test_create_customer(client):
     customer = Customer(name='John Doe', address='123 Elm Street', email='john.doe@example.com')
-    response = client.post('http://localhost:8000/customers', json=customer.__dict__)
+    response = client.post('http://localhost:8000/customers', json=asdict(customer))
     assert response.status_code == 201
     assert response.json()['name'] == 'John Doe'
 
@@ -19,7 +20,7 @@ def test_get_customer(client):
 
 def test_update_customer(client):
     customer = Customer(name='Jane Doe', address='456 Oak Street', email='jane.doe@example.com')
-    response = client.put('http://localhost:8000/customers/1', json=customer.__dict__)
+    response = client.put('http://localhost:8000/customers/1', json=asdict(customer))
     assert response.status_code == 200
     assert response.json()['name'] == 'Jane Doe'
 
