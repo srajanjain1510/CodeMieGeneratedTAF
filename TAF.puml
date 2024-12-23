@@ -1,0 +1,51 @@
+@startuml
+package "Test Automation Framework" {
+    class TestAutomationFramework {
+        +run_tests()
+        +generate_reports()
+    }
+
+    class DataGenerator {
+        +generate_offices()
+        +generate_employees()
+        +generate_product_lines()
+        +generate_products()
+        +generate_customers()
+    }
+
+    class PerformanceDataGenerator {
+        +generate_orders()
+        +generate_employees()
+        +generate_offices()
+    }
+
+    class Database {
+        +insert_offices()
+        +insert_employees()
+        +insert_product_lines()
+        +insert_products()
+        +insert_customers()
+        +insert_orders()
+        +insert_payments()
+    }
+
+    class TestData {
+        +load_json()
+        +generate_random_data()
+    }
+
+    class Config {
+        +load_config()
+    }
+
+    TestAutomationFramework --> DataGenerator
+    TestAutomationFramework --> PerformanceDataGenerator
+    TestAutomationFramework --> TestData
+    TestAutomationFramework --> Config
+    DataGenerator --> Database
+    PerformanceDataGenerator --> Database
+    TestData --> Database
+    Config --> DataGenerator
+    Config --> PerformanceDataGenerator
+}
+@enduml
