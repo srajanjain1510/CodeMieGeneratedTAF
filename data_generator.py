@@ -34,6 +34,10 @@ class DataGenerator:
     def __init__(self, db):
         self.db = db
 
+    def load_json(self, file_path):
+        with open(file_path, 'r') as f:
+            return json.load(f)
+
     def generate_offices(self, count=5) -> List[Office]:
         offices = [Office(id=i, location=f"Office-{i}") for i in range(1, count + 1)]
         self.db.insert_offices(offices)
@@ -67,8 +71,11 @@ class DataGenerator:
         self.db.insert_customers(customers)
         return customers
 
-    def load_test_data_from_json(self, json_file_path):
-        with open(json_file_path, 'r') as file:
-            data = json.load(file)
-        return data
-
+# Example usage:
+# db = YourDatabaseConnection()
+# data_gen = DataGenerator(db)
+# offices = data_gen.generate_offices()
+# data_gen.generate_employees(offices)
+# product_lines = data_gen.generate_product_lines()
+# data_gen.generate_products(product_lines)
+# data_gen.generate_customers()

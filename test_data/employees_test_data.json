@@ -1,12 +1,14 @@
 {
-  "create_employee": {
-    "name": "Alice Smith",
-    "position": "Manager",
-    "office_code": "1"
-  },
-  "update_employee": {
-    "name": "Bob Johnson",
-    "position": "Director",
-    "office_code": "2"
-  }
+  "employees": [
+    {
+      "name": "Alice Smith",
+      "position": "Manager",
+      "office_code": "1"
+    },
+    {
+      "name": "Bob Johnson",
+      "position": "Developer",
+      "office_code": "1"
+    }
+  ]
 }
