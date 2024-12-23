@@ -8,5 +8,22 @@
     "name": "Bob",
     "position": "Senior Engineer",
     "office_code": "LA"
-  }
+  },
+  "employees_test_data": [
+    {
+      "name": "Charlie",
+      "position": "Manager",
+      "office_code": "SF"
+    },
+    {
+      "name": "Diana",
+      "position": "Analyst",
+      "office_code": "NYC"
+    },
+    {
+      "name": "Eve",
+      "position": "Developer",
+      "office_code": "LA"
+    }
+  ]
 }
