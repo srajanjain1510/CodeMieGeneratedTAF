@@ -8,5 +8,29 @@
     "name": "Gadget",
     "description": "An improved gadget",
     "price": 29.99
+  },
+  "test_data": {
+    "products": [
+      {
+        "name": "Test Widget 1",
+        "description": "A test widget",
+        "price": 9.99
+      },
+      {
+        "name": "Test Gadget 1",
+        "description": "A test gadget",
+        "price": 14.99
+      },
+      {
+        "name": "Test Widget 2",
+        "description": "Another test widget",
+        "price": 11.99
+      },
+      {
+        "name": "Test Gadget 2",
+        "description": "Another test gadget",
+        "price": 19.99
+      }
+    ]
   }
 }
